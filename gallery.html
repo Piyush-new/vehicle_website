@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | Legend of Roads</title>
+  <style>
+    /* ==================== */
+    /* General Styles       */
+    /* ==================== */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    
+    header {
+      background-color: #020a01;
+      padding: 20px 0;
+      color: #fff;
+    }
+    header h1 {
+      font-size: 32px;
+      margin: 0;
+    }
+    
+    /* ==================== */
+    /* Gallery Section      */
+    /* ==================== */
+    .gallery {
+      padding: 20px;
+    }
+    .gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+    }
+    .gallery-thumb {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-thumb:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* ==================== */
+    /* Modal Styles         */
+    /* ==================== */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 800px;
+      width: 90%;
+      max-height: 90vh;
+      overflow: auto;
+      text-align: center;
+      position: relative;
+    }
+    .modal-content img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .modal-content p {
+      font-size: 18px;
+      color: #555;
+      margin: 0;
+    }
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 25px;
+      cursor: pointer;
+      color: white;
+      background: transparent;
+      border: none;
+    }
+    .close-modal:hover {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  
+  <header>
+    <h1>Gallery Highlights - Cars & Bikes</h1>
+  </header>
+  
+  <!-- Gallery Section -->
+  <section class="gallery">
+    <div class="gallery-container">
+      
+      <!-- Car Images (Using your slide links and alt names) -->
+      <img src="19---Aston Martin DB5 (1964).jpg" alt="Aston Martin DB5 (1964)" class="gallery-thumb" onclick="openModal(this)">
+      <img src="20---Ford Mustang Shelby GT350 (1965).jpg" alt="Ford Mustang Shelby GT350 (1965)" class="gallery-thumb" onclick="openModal(this)">
+      <img src="21-Chevrole- Corvette.jpeg" alt="Chevrolet Corvette" class="gallery-thumb" onclick="openModal(this)">
+      <img src="22-Rolls-Royce Dawn Drophead.jpeg" alt="Rolls-Royce Dawn Drophead" class="gallery-thumb" onclick="openModal(this)">
+      <img src="23---Volkswagen Beetle (1938).jpg" alt="Volkswagen Beetle (1938)" class="gallery-thumb" onclick="openModal(this)">
+      <img src="24-Porsche 911.jpeg" alt="Porsche 911" class="gallery-thumb" onclick="openModal(this)">
+      
+      <!-- Bike Images (Sample filenames and alt names) -->
+      <img src="66-harley-davidson-softail.jpg" alt="Harley-Davidson Softail" class="gallery-thumb" onclick="openModal(this)">
+      <img src="67-indian-chief.jpg" alt="Indian Chief" class="gallery-thumb" onclick="openModal(this)">
+      <img src="68-triumph-bonnville.jpg" alt="Triumph Bonneville" class="gallery-thumb" onclick="openModal(this)">
+      <img src="69-Ducati Monster.jpg" alt="Ducati Monster" class="gallery-thumb" onclick="openModal(this)">
+      <img src="70-BMW R nineT.jpg" alt="BMW R nineT" class="gallery-thumb" onclick="openModal(this)">
+      <img src="71-Yamaha V-Max.jpg" alt="Yamaha V-Max" class="gallery-thumb" onclick="openModal(this)">
+      <img src="72-Kawasaki Z1000.jpg" alt="Kawasaki Z1000" class="gallery-thumb" onclick="openModal(this)">
+      <img src="73- Mahindra Scorpio N.jpg" alt=" Mahindra Scorpio N" class="gallery-thumb" onclick="openModal(this)">
+      <img src="74- Hyundai Creta.jpg" alt=" Hyundai Creta" class="gallery-thumb" onclick="openModal(this)">
+      <img src="75-Tata Nexon.jpg" alt="Tata Nexon" class="gallery-thumb" onclick="openModal(this)">
+      <img src="76-Maruti Suzuki Brezza.jpg" alt="Maruti Suzuki Brezza" class="gallery-thumb" onclick="openModal(this)">
+      <img src="77-G wagon.jpg" alt="G Wagon" class="gallery-thumb" onclick="openModal(this)">
+      <img src="78-Maruti Suzuki Wagon R.jpg" alt=" Wagon R" class="gallery-thumb" onclick="openModal(this)">
+      <img src="79-Skoda Kylaq.jpg" alt="Skoda Kylaq" class="gallery-thumb" onclick="openModal(this)">
+      
+    </div>
+  </section>
+  
+  <!-- Modal (Hidden by Default) -->
+  <div class="modal" id="imageModal">
+    <div class="modal-content">
+      <button class="close-modal" onclick="closeModal()">&times;</button>
+      <img id="modalImg" alt="Enlarged Image">
+      <p id="modalDesc"></p>
+    </div>
+  </div>
+    
+  <script>
+    // Function to open the modal and display the clicked image along with its description (from the alt attribute)
+    function openModal(imgElement) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImg");
+      const modalDesc = document.getElementById("modalDesc");
+      
+      modalImg.src = imgElement.src;
+      modalDesc.innerText = imgElement.alt;
+      modal.style.display = "flex";
+    }
+    
+    // Function to close the modal
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+  </script>
+  
+</body>
+</html>

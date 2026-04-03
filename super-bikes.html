@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Bikes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>SUPER BIKES</h1>
+  </header>
+
+  <div class="container">
+    <img src="0-arrow.png" class="arrow left" onclick="prevSlide()">
+    <div class="frame">
+      <div class="slider">
+       
+        <img src="31---Kawasaki Ninja ZX-10R.jpg" alt="Kawasaki Ninja ZX-10R" class="image" onclick="openModal(this)">
+        
+        <img src="32-Suzuki Hayabusa.jpg" alt="Suzuki Hayabusa" class="image" onclick="openModal(this)">
+        
+        <img src="33---Kawasaki Z900.jpg" alt="Kawasaki Z900" class="image" onclick="openModal(this)">
+        
+        <img src="34-BMW M 1000 RR.jpg" alt="BMW M 1000 RR" class="image" onclick="openModal(this)">
+        
+        <img src="35---Ducati Panigale V4 R.jpg" alt="Ducati Panigale V4-R" class="image" onclick="openModal(this)">
+        
+        <img src="36-Aprilia RSV4 1100 Factory.webp" alt="Aprilia RSV4 1100 Factory" class="image" onclick="openModal(this)">
+        
+      </div>
+    </div>
+    <img src="0-arrow.png" class="arrow right" onclick="nextSlide()">
+  </div>
+
+  <div class="modal" id="imageModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <img id="modalImg">
+      <p class="modal-description" id="modalDesc"></p>
+    </div>
+  </div>
+
+  <script src="new-script.js"></script>
+</body>
+</html>

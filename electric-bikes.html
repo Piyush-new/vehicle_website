@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electric Bikes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>ELECTRIC BIKES</h1>
+  </header>
+
+  <div class="container">
+    <img src="0-arrow.png" class="arrow left" onclick="prevSlide()">
+    <div class="frame">
+      <div class="slider">
+       
+       <img src="50-Revolt RV400.webp" alt="Revolt RV400" class="image" onclick="openModal(this)">
+        
+        <img src="51-Ultraviolette F77.avif" alt="Ultraviolette F77" class="image" onclick="openModal(this)"> 
+        
+        <img src="52-Ola Roadster.jpg" alt="Ola Roadster" class="image" onclick="openModal(this)">
+      
+        <img src="53-Oben Rorr.webp" alt="Oben Rorr " class="image" onclick="openModal(this)">
+      
+        <img src="54-Komaki Ranger.avif" alt="Komaki Ranger" class="image" onclick="openModal(this)">
+       
+      </div>
+    </div>
+    <img src="0-arrow.png" class="arrow right" onclick="nextSlide()">
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="imageModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <img id="modalImg">
+      <p class="modal-description" id="modalDesc"></p>
+    </div>
+  </div>
+
+  <script src="new-script.js"></script>
+</body>
+</html>

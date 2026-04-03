@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sports Cars</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>SPORTS CARS</h1>
+  </header>
+
+  <div class="container">
+    <!-- Left Arrow -->
+    <img src="0-arrow.png" class="arrow left" onclick="prevSlide()">
+    
+    <!-- Slider Frame -->
+    <div class="frame">
+      <div class="slider">
+        
+        <img src="5---Porsche 911 GT3 RS.jpg" alt="Porsche 911 GT3 RS" class="image" onclick="openModal(this)">
+        
+         
+          <img src="6---Bugatti Chiron.jpg" alt="Bugatti Chiron" class="image" onclick="openModal(this)">
+
+          
+        <img src="7---Ford GT.jpg" alt="Ford GT" class="image" onclick="openModal(this)">
+       
+          
+        <img src="4---Mercedes-AMG GT.jpg" alt="Mercedes-AMG GT" class="image" onclick="openModal(this)">
+        
+        <img src="2audi_r8.jpg" alt="Audi R8" class="image" onclick="openModal(this)">
+        
+        <img src="3mclaren-720s.jpg" alt="McLaren 720S" class="image" onclick="openModal(this)">
+       
+        <img src="1huracan.webp" alt="Lamborghini Huracán" class="image" onclick="openModal(this)">
+       
+      </div>
+    </div>
+    <!-- Right Arrow -->
+    <img src="0-arrow.png" class="arrow right" onclick="nextSlide()">
+  </div>
+
+  <!-- Modal for Image and Description -->
+  <div class="modal" id="imageModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <img id="modalImg">
+      <p class="modal-description" id="modalDesc"></p>
+    </div>
+  </div>
+
+  <script src="new-script.js"></script>
+</body>
+</html>

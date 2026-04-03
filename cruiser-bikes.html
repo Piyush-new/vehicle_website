@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cruiser Bikes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>CRUISER BIKES</h1>
+  </header>
+
+  <div class="container">
+    <img src="0-arrow.png" class="arrow left" onclick="prevSlide()">
+    <div class="frame">
+      <div class="slider">
+        
+        <img src="25---Royal Enfield Meteor 350.jpg" alt="Royal Enfield Meteor" class="image" onclick="openModal(this)">
+         
+        <img src="26---Jawa 42 Bobber.jpg" alt="Jawa 42 Bobber" class="image" onclick="openModal(this)">
+        
+        <img src="27-royal-enfield-classic-350.jpg" alt="Royal Enfield Classic 350" class="image" onclick="openModal(this)">
+        
+        <img src="28-Harley-Davidson X440.jpg" alt="Harley-Davidson X440" class="image" onclick="openModal(this)">
+        
+        <img src="29-Bajaj Avenger Cruise.avif" alt="Bajaj Avenger Cruise" class="image" onclick="openModal(this)">
+        
+        <img src="30---Royal Enfield Shotgun 650.webp" alt="Royal Enfield Shotgun" class="image" onclick="openModal(this)">
+      
+      </div>
+    </div>
+    <img src="0-arrow.png" class="arrow right" onclick="nextSlide()">
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="imageModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <img id="modalImg">
+      <p class="modal-description" id="modalDesc"></p>
+    </div>
+  </div>
+
+  <script src="new-script.js"></script>
+</body>
+</html>

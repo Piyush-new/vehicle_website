@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car & Bike Gallery</title>
+  <link rel="stylesheet" href="index-style.css">
+</head>
+
+<body>
+<nav>
+  <!-- Navigation Bar -->
+  <div class="logo">
+    <a href="index.html">
+      <img src="65-road.webp" alt="Legend of Roads Logo">
+    </a>
+  </div>
+<div class="logo-text"><p>LEGEND OF ROAD</p></div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search..." onkeyup="filterCategories()">
+  </div>
+
+  <header>
+    <h1> LEGEND OF ROADS -> Fueled by Passion </h1>
+  </header>
+
+  <!-- Category Cards -->
+  <div class="category-container">
+    <!-- Category Card for Sports Cars -->
+    <div class="category-card" onclick="openCategory('sports-cars.html')">
+      <img src="55-sports-cars.jpg" alt="Sports Cars">
+      <div class="category-name">Sports Cars</div>
+    </div>
+    <!-- Category Card for Luxury Cars -->
+    <div class="category-card" onclick="openCategory('luxury-cars.html')">
+      <img src="56-luxury-cars.jpg" alt="Luxury Cars">
+      <div class="category-name">Luxury Cars</div>
+    </div>
+    <!-- Category Card for Electric Cars -->
+    <div class="category-card" onclick="openCategory('electric-cars.html')">
+      <img src="57-electric-cars.jpg" alt="Electric Cars">
+      <div class="category-name">Electric Cars</div>
+    </div>
+    <!-- Category Card for Classic & Vintage Cars -->
+    <div class="category-card" onclick="openCategory('classic-cars.html')">
+      <img src="58-classic-vintage-cars.jpg" alt="Classic & Vintage Cars">
+      <div class="category-name">Classic & Vintage Cars</div>
+    </div>
+    <!-- Category Card for Cruiser Bikes -->
+    <div class="category-card" onclick="openCategory('cruiser-bikes.html')">
+      <img src="59-cruiser-bikes.jpg" alt="Cruiser Bikes">
+      <div class="category-name">Cruiser Bikes</div>
+    </div>
+    <!-- Category Card for Super Bikes -->
+    <div class="category-card" onclick="openCategory('super-bikes.html')">
+      <img src="60-super-bikes.jpg" alt="Super Bikes">
+      <div class="category-name">Super Bikes</div>
+    </div>
+    <!-- Category Card for Commuter Bikes -->
+    <div class="category-card" onclick="openCategory('commuter-bikes.html')">
+      <img src="61-commuter-bikes.jpg" alt="Commuter Bikes">
+      <div class="category-name">Commuter Bikes</div>
+    </div>
+    <!-- Category Card for Off-Road Bikes -->
+    <div class="category-card" onclick="openCategory('off-roading-bikes.html')">
+      <img src="62-off-roading-bikes.jpg" alt="Off-Road Bikes">
+      <div class="category-name">Off-Road Bikes</div>
+    </div>
+    <!-- Category Card for Electric Bikes -->
+    <div class="category-card" onclick="openCategory('electric-bikes.html')">
+      <img src="63-electric-bikes.jpg" alt="Electric Bikes">
+      <div class="category-name">Electric Bikes</div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-wrapper">
+      <!-- About Column -->
+      <div class="footer-column about">
+        <h3>About Legend of Roads</h3>
+        <p>
+          Legend of Roads celebrates iconic rides and motor culture. Our platform features the best in automotive
+          history—from timeless classics to modern marvels—uniting enthusiasts across the globe.
+        </p>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div class="footer-column links">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Us Column -->
+      <div class="footer-column contact">
+        <h3>Contact Us</h3>
+        <p><strong>Email:</strong> <a
+            href="mailto:bu2024ugbca023@bahrauniversity.edu.in">bu2024ugbca023@bahrauniversity.edu.in</a></p>
+        <p><strong>Phone:</strong> +91 9816442192</p>
+        <p><strong>Address:</strong> Waknaghat, Kandaghat, Himachal Pradesh 173234</p>
+      </div>
+
+      <!-- Newsletter & Social Column -->
+      <div class="footer-column newsletter">
+        <h3>Newsletter</h3>
+        <p>Subscribe for the latest updates and exclusive content.</p>
+        <form id="newsletterForm">
+          <input type="email" placeholder="Your Email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <div class="social-links">
+          <a href="#">Facebook</a> |
+          <a href="#">Twitter</a> |
+          <a href="https://www.instagram.com/?next=%2F" _blank>Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Legend of Roads. All rights reserved.</p>
+      <p>Designed for automotive enthusiasts, driven by passion.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Function to open the selected category in a new tab.
+    function openCategory(page) {
+      window.open(page, '_blank');
+    }
+
+    // Filter function for the search bar.
+    function filterCategories() {
+      let input = document.getElementById('searchInput').value.toLowerCase();
+      let categories = document.querySelectorAll('.category-card');
+      categories.forEach(category => {
+        let name = category.querySelector('.category-name').innerText.toLowerCase();
+        category.style.display = name.includes(input) ? "block" : "none";
+      });
+    }
+  </script>
+
+</body>
+
+</html>

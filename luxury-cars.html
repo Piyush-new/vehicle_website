@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Cars</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>LUXURY CARS</h1>
+  </header>
+
+  <div class="container">
+    <img src="0-arrow.png" class="arrow left" onclick="prevSlide()">
+    <div class="frame">
+      <div class="slider">
+         
+        <img src="8bmw-x5.avif" alt="BMW X5" class="image" onclick="openModal(this)">
+         
+        <img src="9Mercedes_c_class.jpg" alt="Mercedes-Benz C-Class" class="image" onclick="openModal(this)">
+        
+        <img src="10---Land Rover Range Rover.jpg" alt="Land Rover Range Rover" class="image" onclick="openModal(this)">
+        
+        <img src="11-ferrari-812.avif" alt="Ferrari 812 Superfast" class="image" onclick="openModal(this)">
+         
+        <img src="12-rolls-royce.jpeg" alt="Rolls-Royce Cullinan" class="image" onclick="openModal(this)">
+        
+        <img src="13-jaguar-f-type.jpg" alt="Jaguar F-TYPE" class="image" onclick="openModal(this)">
+         
+      </div>
+    </div>
+    <img src="0-arrow.png" class="arrow right" onclick="nextSlide()">
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="imageModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <img id="modalImg">
+      <p class="modal-description" id="modalDesc"></p>
+    </div>
+  </div>
+
+  <script src="new-script.js"></script>
+</body>
+</html>

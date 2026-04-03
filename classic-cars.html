@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classic & Vintage Cars</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>CLASSIC & VINTAGE CARS</h1>
+  </header>
+
+  <div class="container">
+    <img src="0-arrow.png" class="arrow left" onclick="prevSlide()">
+    <div class="frame">
+      <div class="slider">
+    
+        <img src="19---Aston Martin DB5 (1964).jpg" alt="Aston Martin" class="image" onclick="openModal(this)"> 
+        
+        <img src="20---Ford Mustang Shelby GT350 (1965).jpg" alt="Mustang Shelby GT350" class="image" onclick="openModal(this)">
+        
+        <img src="21-Chevrole- Corvette.jpeg" alt="Chevrolet Corvette" class="image" onclick="openModal(this)">
+      
+        <img src="22-Rolls-Royce Dawn Drophead.jpeg" alt="Rolls-Royce Dawn Drophead" class="image" onclick="openModal(this)">
+        
+        <img src="23---Volkswagen Beetle (1938).jpg" alt="Volkswagen Beetle" class="image" onclick="openModal(this)">
+        
+        <img src="24-Porsche 911.jpeg" alt="Porsche 911" class="image" onclick="openModal(this)">
+       
+      </div>
+    </div>
+    <img src="0-arrow.png" class="arrow right" onclick="nextSlide()">
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="imageModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <img id="modalImg">
+      <p class="modal-description" id="modalDesc"></p>
+    </div>
+  </div>
+
+  <script src="new-script.js"></script>
+</body>
+</html>

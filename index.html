@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Legend of Roads - Home</title>
+  <style>
+    /* ========= General Styles ========= */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    /* ========= Categories Container ========= */
+    .categories {
+      max-width: 1200px;
+      margin: auto;
+      padding: 10px;
+    }
+
+    /* ========= Each Category Container ========= */
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+      margin: 20px 0;
+      background: linear-gradient(to right, #222, #555);
+      border-radius: 15px;
+      padding: 20px;
+    }
+
+    /* ========= Arrow Styles ========= */
+    .arrow {
+      width: 50px;
+      cursor: pointer;
+    }
+    .arrow.left {
+      transform: rotate(180deg);
+    }
+
+    /* ========= Frame & Slider ========= */
+    .frame {
+      overflow: hidden;
+      flex: 1;
+      margin: 0 10px;
+    }
+    .slider {
+      display: flex;
+      gap: 10px;
+      transition: transform 0.5s ease;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+    }
+    .slider::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* ========= Image Styles ========= */
+    .image {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      flex-shrink: 0;
+    }
+    .image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    /* ========= Modal Styles ========= */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 800px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      max-height: 90vh;
+      overflow: auto;
+    }
+    .modal-content img {
+      width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .modal-description {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #333;
+    }
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      color: #333;
+    }
+    .close-modal:hover {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="categories">
+    <!-- SPORTS CARS -->
+    <h2>SPORTS CARS</h2>
+    <div class="container">
+      <img src="0-arrow.png" alt="Left Arrow" class="arrow left" onclick="prevSlide(this)">
+      <div class="frame">
+        <div class="slider">
+          <img src="1huracan.webp" alt="Lamborghini Huracán" class="image" onclick="openModal(this)">
+          <img src="2audi_r8.jpg" alt="Audi R8" class="image" onclick="openModal(this)">
+          <img src="3mclaren-720s.jpg" alt="McLaren 720S" class="image" onclick="openModal(this)">
+          <img src="4---Mercedes-AMG GT.jpg" alt="Mercedes AMG GT" class="image" onclick="openModal(this)">
+          <img src="5---Porsche 911 GT3 RS.jpg" alt="Porsche 911" class="image" onclick="openModal(this)">
+          <img src="6---Bugatti Chiron.jpg" alt="Bugatti Chiron" class="image" onclick="openModal(this)">
+          <img src="7---Ford GT.jpg" alt="Ford GT" class="image" onclick="openModal(this)">
+        </div>
+      </div>
+      <img src="0-arrow.png" alt="Right Arrow" class="arrow right" onclick="nextSlide(this)">
+    </div>
+    
+    <!-- Luxury Cars -->
+    <h2>Luxury Cars</h2>
+    <div class="container">
+      <img src="0-arrow.png" alt="Left Arrow" class="arrow left" onclick="prevSlide(this)">
+      <div class="frame">
+        <div class="slider">
+          <img src="8bmw-x5.avif" alt="BMW X5" class="image" onclick="openModal(this)">
+          <img src="9Mercedes_c_class.jpg" alt="Mercedes C-Class" class="image" onclick="openModal(this)">
+          <img src="10---Land Rover Range Rover.jpg" alt="Land Rover" class="image" onclick="openModal(this)">
+          <img src="11-ferrari-812.avif" alt="Ferrari 812 Superfast" class="image" onclick="openModal(this)">
+          <img src="12-rolls-royce.jpeg" alt="Rolls Royce" class="image" onclick="openModal(this)">
+          <img src="13-jaguar-f-type.jpg" alt="Jaguar F-Type" class="image" onclick="openModal(this)">
+        </div>
+      </div>
+      <img src="0-arrow.png" alt="Right Arrow" class="arrow right" onclick="nextSlide(this)">
+    </div>
+    
+    <!-- Electric Car -->
+    <h2>Electric Car</h2>
+    <div class="container">
+      <img src="0-arrow.png" alt="Left Arrow" class="arrow left" onclick="prevSlide(this)">
+      <div class="frame">
+        <div class="slider">
+          <img src="14-Tata_Nexon_EV.avif" alt="Tata Nexon EV" class="image" onclick="openModal(this)">
+          <img src="15-Mahindra-XUV400.jpg" alt="Mahindra XUV400" class="image" onclick="openModal(this)">
+          <img src="16-hyundai-ioniq-5.jpeg" alt="Hyundai Ioniq 5" class="image" onclick="openModal(this)">
+          <img src="17-kia-ev6.jpeg" alt="Kia EV6" class="image" onclick="openModal(this)">
+          <img src="18-mg-comet.png" alt="MG Comet EV" class="image" onclick="openModal(this)">
+        </div>
+      </div>
+      <img src="0-arrow.png" alt="Right Arrow" class="arrow right" onclick="nextSlide(this)">
+    </div>
+    
+    <!-- Classic Vintage Cars -->
+    <h2>Classic Vintage Cars</h2>
+    <div class="container">
+      <img src="0-arrow.png" alt="Left Arrow" class="arrow left" onclick="prevSlide(this)">
+      <div class="frame">
+        <div class="slider">
+          <img src="19---Aston Martin DB5 (1964).jpg" alt="Aston Martin DB5" class="image" onclick="openModal(this)">
+          <img src="20---Ford Mustang Shelby GT350 (1965).jpg" alt="Ford Mustang Shelby GT350" class="image" onclick="openModal(this)">
+          <img src="21-Chevrole- Corvette.jpeg" alt="Chevrolet Corvette" class="image" onclick="openModal(this)">
+          <img src="22-Rolls-Royce Dawn Drophead.jpeg" alt="Rolls Royce Dawn Drophead" class="image" onclick="openModal(this)">
+          <img src="23---Volkswagen Beetle (1938).jpg" alt="Volkswagen Beetle" class="image" onclick="openModal(this)">
+          <img src="24-Porsche 911.jpeg" alt="Porsche 911" class="image" onclick="openModal(this)">
+        </div>
+      </div>
+      <img src="0-arrow.png" alt="Right Arrow" class="arrow right" onclick="nextSlide(this)">
+    </div>
+    
+    <!-- Cruiser Bikes -->
+    <h2>Cruiser Bikes</h2>
+    <div class="container">
+      <img src="0-arrow.png" alt="Left Arrow" class="arrow left" onclick="prevSlide(this)">
+      <div class="frame">
+        <div class="slider">
+          <img src="25---Royal Enfield Meteor 350.jpg" alt="Royal Enfield Meteor" class="image" onclick="openModal(this)">
+          <img src="26---Jawa 42 Bobber.jpg" alt="Jawa 42 Bobber" class="image" onclick="openModal(this)">
+          <img src="27-royal-enfield-classic-350.jpg" alt="Royal Enfield Classic 350" class="image" onclick="openModal(this)">
+          <img src="28-Harley-Davidson X440.jpg" alt="Harley-Davidson X440" class="image" onclick="openModal(this)">
+          <img src="29-Bajaj Avenger Cruise.avif" alt="Bajaj Avenger Cruise" class="image" onclick="openModal(this)">
+          <img src="30---Royal Enfield Shotgun 650.webp" alt="Royal Enfield Shotgun" class="image" onclick="openModal(this)">
+        </div>
+      </div>
+      <img src="0-arrow.png" alt="Right Arrow" class="arrow right" onclick="nextSlide(this)">
+    </div>
+    
+    <!-- Super Bikes -->
+    <h2>Super Bikes</h2>
+    <div class="container">
+      <img src="0-arrow.png" alt="Left Arrow" class="arrow left" onclick="prevSlide(this)">
+      <div class="frame">
+        <div class="slider">
+          <img src="31---Kawasaki Ninja ZX-10R.jpg" alt="Kawasaki Ninja ZX-10R" class="image" onclick="openModal(this)">
+          <img src="32-Suzuki Hayabusa.jpg" alt="Suzuki Hayabusa" class="image" onclick="openModal(this)">
+          <img src="33---Kawasaki Z900.jpg" alt="Kawasaki Z900" class="image" onclick="openModal(this)">
+          <img src="34-BMW M 1000 RR.jpg" alt="BMW M 1000 RR" class="image" onclick="openModal(this)">
+          <img src="35---Ducati Panigale V4 R.jpg" alt="Ducati Panigale V4-R" class="image" onclick="openModal(this)">
+          <img src="36-Aprilia RSV4 1100 Factory.webp" alt="Aprilia RSV4 1100 Factory" class="image" onclick="openModal(this)">
+        </div>
+      </div>
+      <img src="0-arrow.png" alt="Right Arrow" class="arrow right" onclick="nextSlide(this)">
+    </div>
+    
+    <!-- Commuter Bikes -->
+    <h2>Commuter Bikes</h2>
+    <div class="container">
+      <img src="0-arrow.png" alt="Left Arrow" class="arrow left" onclick="prevSlide(this)">
+      <div class="frame">
+        <div class="slider">
+          <img src="37-Hero Splendor Plus.avif" alt="Hero Splendor Plus" class="image" onclick="openModal(this)">
+          <img src="38-Honda Shine.avif" alt="Honda Shine" class="image" onclick="openModal(this)">
+          <img src="39-Bajaj Pulsar 150.jpg" alt="Bajaj Pulsar 150" class="image" onclick="openModal(this)">
+          <img src="40-TVS Apache RTR 160.jpg" alt="TVS Apache RTR 160" class="image" onclick="openModal(this)">
+          <img src="41---Yamaha MT 15 V2.jpg" alt="Yamaha MT 15" class="image" onclick="openModal(this)">
+          <img src="42-Bajaj Pulsar NS200.jpg" alt="Bajaj Pulsar NS200" class="image" onclick="openModal(this)">
+          <img src="43-TVS Raider 125.jpg" alt="TVS Raider 125" class="image" onclick="openModal(this)">
+        </div>
+      </div>
+      <img src="0-arrow.png" alt="Right Arrow" class="arrow right" onclick="nextSlide(this)">
+    </div>
+    
+    <!-- Off-Roading Bikes -->
+    <h2>Off-Roading Bikes</h2>
+    <div class="container">
+      <img src="0-arrow.png" alt="Left Arrow" class="arrow left" onclick="prevSlide(this)">
+      <div class="frame">
+        <div class="slider">
+          <img src="44-Royal Enfield Himalayan 450.jpg" alt="Royal Enfield Himalayan 450" class="image" onclick="openModal(this)">
+          <img src="45-Hero XPulse 210.jpeg" alt="Hero XPulse 210" class="image" onclick="openModal(this)">
+          <img src="46---KTM 390 Adventure.jpg" alt="KTM 390 Adventure" class="image" onclick="openModal(this)">
+          <img src="47-Yezdi Adventure.jpg" alt="Yezdi Adventure" class="image" onclick="openModal(this)">
+          <img src="48-BMW R 1300 GS.jpg" alt="BMW R 1300 GS" class="image" onclick="openModal(this)">
+          <img src="49-Kawasaki KX 250.jpeg" alt="Kawasaki KX 250" class="image" onclick="openModal(this)">
+        </div>
+      </div>
+      <img src="0-arrow.png" alt="Right Arrow" class="arrow right" onclick="nextSlide(this)">
+    </div>
+    
+    <!-- Electric Bikes -->
+    <h2>Electric Bikes</h2>
+    <div class="container">
+      <img src="0-arrow.png" alt="Left Arrow" class="arrow left" onclick="prevSlide(this)">
+      <div class="frame">
+        <div class="slider">
+          <img src="50-Revolt RV400.webp" alt="Revolt RV400" class="image" onclick="openModal(this)">
+          <img src="51-Ultraviolette F77.avif" alt="Ultraviolette F77" class="image" onclick="openModal(this)">
+          <img src="52-Ola Roadster.jpg" alt="Ola Roadster" class="image" onclick="openModal(this)">
+          <img src="53-Oben Rorr.webp" alt="Oben Rorr" class="image" onclick="openModal(this)">
+          <img src="54-Komaki Ranger.avif" alt="Komaki Ranger" class="image" onclick="openModal(this)">
+        </div>
+      </div>
+      <img src="0-arrow.png" alt="Right Arrow" class="arrow right" onclick="nextSlide(this)">
+    </div>
+
+  </div>
+  
+  <!-- Modal for Enlarged Image -->
+  <div class="modal" id="imageModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <img id="modalImg" alt="Enlarged Image">
+      <p class="modal-description" id="modalDesc"></p>
+    </div>
+  </div>
+  
+  <script>
+    // Scroll-based slider functions:
+    function nextSlide(arrow) {
+      const container = arrow.closest('.container');
+      const slider = container.querySelector('.slider');
+      slider.scrollBy({ left: 210, behavior: 'smooth' });
+    }
+    
+    function prevSlide(arrow) {
+      const container = arrow.closest('.container');
+      const slider = container.querySelector('.slider');
+      slider.scrollBy({ left: -210, behavior: 'smooth' });
+    }
+    
+    // Modal functions:
+    function openModal(imgElem) {
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImg');
+      const modalDesc = document.getElementById('modalDesc');
+      modal.style.display = 'flex';
+      modalImg.src = imgElem.src;
+      modalDesc.textContent = imgElem.alt;
+    }
+    
+    function closeModal() {
+      document.getElementById('imageModal').style.display = 'none';
+    }
+    
+    // Optional: Keyboard arrow support for the first slider as an example.
+    document.addEventListener('keydown', (e) => {
+      if (document.getElementById('imageModal').style.display !== 'flex') {
+        const firstSlider = document.querySelector('.slider');
+        if (e.key === 'ArrowRight') {
+          firstSlider.scrollBy({ left: 210, behavior: 'smooth' });
+        } else if (e.key === 'ArrowLeft') {
+          firstSlider.scrollBy({ left: -210, behavior: 'smooth' });
+        }
+      }
+    });
+  </script>
+</body>
+</html>

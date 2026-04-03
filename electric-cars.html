@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electric Cars</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>ELECTRIC CARS</h1>
+  </header>
+
+  <div class="container">
+    <img src="0-arrow.png" class="arrow left" onclick="prevSlide()">
+    <div class="frame">
+      <div class="slider">
+      
+        <img src="14-Tata_Nexon_EV.avif" alt="Tata Nexon EV" class="image" onclick="openModal(this)">
+       
+        <img src="15-Mahindra-XUV400.jpg" alt="Mahindra XUV400" class="image" onclick="openModal(this)">
+        
+        <img src="16-hyundai-ioniq-5.jpeg" alt="Hyundai Ioniq 5" class="image" onclick="openModal(this)">
+       
+        <img src="17-kia-ev6.jpeg" alt="Kia EV6" class="image" onclick="openModal(this)">
+         
+        <img src="18-mg-comet.png" alt="MG Comet" class="image" onclick="openModal(this)">
+        
+      </div>
+    </div>
+    <img src="0-arrow.png" class="arrow right" onclick="nextSlide()">
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="imageModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <img id="modalImg">
+      <p class="modal-description" id="modalDesc"></p>
+    </div>
+  </div>
+
+  <script src="new-script.js"></script>
+</body>
+</html>
